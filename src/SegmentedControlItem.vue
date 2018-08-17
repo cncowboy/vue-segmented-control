@@ -73,7 +73,7 @@ export default {
 <style>
     .segmented-item {
         flex: 1;
-        padding: 10px;
+        padding: 4px;
         transition: all .3s ease;
         text-align: center;
         user-select: none;
