@@ -8,7 +8,7 @@
             :color="color"
             :activeColor="activeColor"
             :optionsSelected="optionsSelected"
-            @select="onSelect" :key="option" />
+            @select="onSelect" :key="option[value]" />
     </div>
 </template>
 
@@ -43,12 +43,19 @@ export default {
         multiple: {
             type: Boolean,
             default: false
+        },
+        selectOptions: {
+            type: Array,
+            required: true
         }
     },
     data () {
         return {
             optionsSelected: []
         }
+    },
+    mounted () {
+        this.optionsSelected = this.selectOptions
     },
     computed: {
         segmentedControlStyle: function () {
